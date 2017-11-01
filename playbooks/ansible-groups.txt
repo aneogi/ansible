@@ -1,0 +1,18 @@
+Conditionals - When Clause...
+
+    You can group conditions using parenthesis ()
+
+tasks:
+  - name: "shutdown CentOS 6 and Debian 7 systems"
+    command: /sbin/shutdown -t now
+    when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6") or
+          (ansible_distribution == "Debian" and ansible_distribution_major_version == "7")+
+
+    You can define multiple conditions, where all of them should be true to execute the tasks
+
+tasks:
+  - name: "shut down CentOS 6 systems"
+    command: /sbin/shutdown -t now
+    when:
+      - ansible_distribution == "CentOS"
+      - ansible_distribution_major_version == "6"

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+   - shell: echo "Hello World!"
+   - stat:
+        path: /home/ubuntu/folder1
+     register: sts
+   - template:
+        src: /home/scrapbook/tutorial/somefile.j2
+        dest: /home/ubuntu/folder1/somefile.j2
+     when: sts.stat.exists
+   - shell: echo "{{sts.stat.exists}}"

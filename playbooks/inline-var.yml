@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars:
+    var1: 20
+  tasks:
+    - debug: msg="Value of var1 is {{var1}}"

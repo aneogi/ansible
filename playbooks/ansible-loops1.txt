@@ -1,0 +1,12 @@
+If you need to repeat the same task with different items (loop through), you can use with_items clause
+For example, consider you want to add several users
+- name: add several users
+  user:
+    name: "{{ item }}"
+    state: present
+    groups: "developer"
+  with_items:
+    - raj
+    - david
+    - john
+    - lauren

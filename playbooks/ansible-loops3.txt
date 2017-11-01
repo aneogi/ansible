@@ -1,0 +1,20 @@
+Sample Playbook 3 - Conditions And Loop
+This Playbook will add Java Packages to different systems (handling Ubuntu/Debian OS)
+- name: debian | ubuntu | add java ppa repo
+  apt_repository:
+    repo=ppa:webupd8team/java
+    state=present
+  become: yes
+  when: ansible_distribution == 'Ubuntu'
+
+- name: debian | ensure the webupd8 launchpad apt repository is present
+    apt_repository:
+      repo="{{ item }} http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
+      update_cache=yes
+      state=present
+    with_items:
+      - deb
+      - deb-src
+    become: yes
+
+  when: ansible_distribution == 'Debian'

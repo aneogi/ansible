@@ -1,0 +1,18 @@
+  > ansible host01 -i myhosts -m command -a "mkdir folder1"
+host01 | success | rc=0 >>
+
+  > ansible host01 -i myhosts -m command -a "ls -ltr"
+host01 | success | rc=0 >>
+total 4
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 29 04:25 folder1
+
+
+
+  > ansible host01 -i myhosts -m command -a "ls -ltr /home/ubuntu/folder1/somefile.j2"
+host01 | success | rc=0 >>
+-rw-rw-r-- 1 ubuntu ubuntu 0 Oct 29 03:44 /home/ubuntu/folder1/somefile.j2
+
+
+  > ansible-playbook -i myhosts test.yml
+
+

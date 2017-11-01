@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+   - apt:
+       name: "{{item}}"
+       state: latest
+       update_cache: yes
+     with_items:
+       - apache2
+       - sqlite3
+       - git
+     become: yes

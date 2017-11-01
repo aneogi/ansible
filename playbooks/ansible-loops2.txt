@@ -1,0 +1,13 @@
+Looping Through The Inventory
+You can loop through the Inventory file to list all hosts or hosts from a play, using with_items with the play_hosts or groups variables,
+# show all the hosts in the inventory
+- debug:
+    msg: "{{ item }}"
+  with_items:
+    - "{{ groups['all'] }}"
+
+# show all the hosts in the current play
+- debug:
+    msg: "{{ item }}"
+  with_items:
+    - "{{ play_hosts }}"
