@@ -1,0 +1,5 @@
+---
+- name: installs nginx
+  apt: pkg=nginx state=latest update_cache=true
+  notify:
+    - start nginx
