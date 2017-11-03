@@ -1,0 +1,4 @@
+#group variables
+[group1:vars]
+ntp_server=example.com
+proxy=proxy.example.com

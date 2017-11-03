@@ -1,0 +1,11 @@
+---
+- name: list variables
+  hosts: all
+  vars:
+    foo:
+      - one
+      - two
+      - three
+  tasks:
+    - debug: msg="{{ foo[0] }}"
+    - debug: msg="{{ foo[2] }}"

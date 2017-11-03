@@ -1,0 +1,7 @@
+---
+- name: complex variables
+  hosts: all
+  tasks:
+    - debug: var=ansible_eth0
+    - debug: msg="{{ ansible_eth0.ipv4.address }}"
+    - debug: msg="{{ ansible_eth0['ipv4']['address'] }}"

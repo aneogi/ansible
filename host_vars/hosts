@@ -1,0 +1,4 @@
+#host variables
+[group1]
+host1 http_port=80
+host2 http_port=303
