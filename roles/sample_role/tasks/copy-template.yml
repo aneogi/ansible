@@ -1,0 +1,5 @@
+---
+- template:
+    src: template-file.j2
+    dest: /home/ubuntu/copy-template-file.j2
+  with_items: var_x

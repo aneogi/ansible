@@ -1,0 +1,21 @@
+---
+- name: Play1 - install apache as a tagged task
+  hosts: all
+  sudo: yes
+  tasks:
+    - apt: name=apache2 update_cache=yes state=latest
+    - debug: msg="apache2"
+      tags:
+        - tagtask
+- name: Play2 - install nginx as a tagged tasks
+  hosts: all
+  sudo: yes
+  tags:
+    - tagplay
+  tasks:
+    - apt: name=nginx update_cache=yes state=latest
+    - debug: msg="nginx"
+      tags:
+        - tagmultitasks
+    - shell: echo "shell task"
+        - tagmultitasks

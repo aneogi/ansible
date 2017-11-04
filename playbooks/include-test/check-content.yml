@@ -1,0 +1,7 @@
+---
+- command: ls /home/ubuntu
+  register: contents
+- debug: msg="directory is empty"
+  when: contents.stdout == ""
+- debug: msg="directory is not empty"
+  when: contents.stdout != ""

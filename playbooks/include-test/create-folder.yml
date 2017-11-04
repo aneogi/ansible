@@ -1,0 +1,3 @@
+---
+- file: path=/home/ubuntu/folder1 state=directory
+- debug: msg="directory - folder1"

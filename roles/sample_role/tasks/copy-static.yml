@@ -1,0 +1,2 @@
+---
+- copy: src=some-file.txt dest=/home/ubuntu/file1.txt

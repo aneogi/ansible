@@ -1,0 +1,10 @@
+---
+- name: include playbooks
+  hosts: all
+  sudo: yes
+  tasks:
+    - include: install-apache.yml
+    - include: check-content.yml
+    - include: create-folder.yml
+    - include: check-content.yml
+- include: install-nginx-standalone.yml

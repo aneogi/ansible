@@ -1,0 +1,15 @@
+---
+- name: Play - special tags
+  hosts: all
+  sudo: yes
+  tasks:
+    - debug: msg="location 1"
+    - debug: msg="location 2"
+      tags:
+        - tag1
+    - debug: msg="location 3"
+      tags:
+        - tag2
+    - debug: msg="location 4"
+      tags:
+        - always
